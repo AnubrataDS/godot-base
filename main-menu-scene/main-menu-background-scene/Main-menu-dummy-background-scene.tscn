@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjan0qjs6fbe"]
+
+[ext_resource type="Script" uid="uid://by22dwnqrjpti" path="res://main-menu-scene/main-menu-background-scene/spinner.gd" id="1_6s0qv"]
+
+[sub_resource type="Environment" id="Environment_dbvm0"]
+background_mode = 1
+background_color = Color(0.220891, 0.221831, 0.398607, 1)
+tonemap_mode = 2
+volumetric_fog_density = 0.3482
+
+[sub_resource type="BoxMesh" id="BoxMesh_6s0qv"]
+
+[node name="Main-menu-dummy-background-scene" type="Node3D"]
+
+[node name="DummyBackgroundScene" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="DummyBackgroundScene"]
+transform = Transform3D(0.808996, -0.319285, 0.49354, -0.0431118, 0.80513, 0.591529, -0.586231, -0.499822, 0.637583, 1.21219, 1.87117, 2.21064)
+environment = SubResource("Environment_dbvm0")
+current = true
+fov = 94.7
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="DummyBackgroundScene"]
+mesh = SubResource("BoxMesh_6s0qv")
+script = ExtResource("1_6s0qv")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="DummyBackgroundScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00879, 3.49117)
+light_color = Color(1, 0.498039, 0.188235, 1)
+light_energy = 2.646
+shadow_enabled = true
